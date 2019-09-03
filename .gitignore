@@ -1,0 +1,27 @@
+##############################
+# IDE#
+##############################
+.idea
+*.sublime-project
+hipay\.enterprise\.woocommerce\.sdk\.sublime-workspace
+
+######################
+# Third party #
+######################
+wordpress/
+data/
+src/woocommerce_hipayenterprise/vendor
+bin/docker/conf/development/hipay.env
+bin/tests/node_modules
+bin/tests/cypress/videos
+bin/tests/.npmrc
+######################
+# Logs and databases #
+######################
+*.log
+*.sql
+
+############
+# Env vars #
+############
+*.env
