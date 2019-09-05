@@ -1,0 +1,19 @@
+image: hipay/gitlab-ci-base:jessie
+
+stages:
+- package
+
+package:
+  stage: package
+  before_script:
+    - apt-get install -y zip sshpass
+  script:
+    - echo "Package module $CI_COMMIT_REF_SLUG"
+    - ./bin/package/builder.sh -v $CI_COMMIT_REF_SLUG
+    - chmod u+x bin/deployment/deploy_package.sh
+    - ./bin/deployment/deploy_package.sh
+  artifacts:
+    paths:
+      - ./bin/package
+  tags:
+    - pi-commerce-no-overlay
